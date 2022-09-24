@@ -3,6 +3,16 @@ networks:
   bri:
     driver: bridge
 services:
+  mysql:
+    image: "mysql:5.7"
+    container_name: "mysql"
+    ports:
+      - 33066:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=1qaz2wsx
+    volumes:
+      - /home/centos/mysql_data:/var/lib/mysql
+      - /home/centos/opt/docker_deploy/mysql/my.cnf:/etc/mysql/my.cnf
   auction_spider:
     image: 'auction_spider:1.0'
     restart: always
