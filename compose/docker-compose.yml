@@ -1,0 +1,14 @@
+version: "3"
+networks:
+  bri:
+    driver: bridge
+services:
+  auction_spider:
+    image: 'auction_spider:1.0'
+    restart: always
+    ports:
+      - '8888:8888'
+    volumes:
+      - '/home/centos/project/spider:/spider'
+    networks:
+      - bri
