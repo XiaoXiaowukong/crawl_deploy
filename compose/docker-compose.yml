@@ -17,13 +17,23 @@ services:
     networks:
       - bri
   auction_spider:
-    image: 'auction_spider:1.0'
+    image: 'auction_spider:1.1'
     container_name: "auction_spider"
     tty: true
     ports:
       - '8888:8888'
     volumes:
       - '/home/centos/project/spider:/spider'
+    environment:
+      - TZ=Asia/Tokyo
+    networks:
+      - bri
+  splash:
+    image: scrapinghub/splash
+    container_name: "splash"
+    restart: always
+    ports:
+      - '8050:8050'
     environment:
       - TZ=Asia/Tokyo
     networks:
