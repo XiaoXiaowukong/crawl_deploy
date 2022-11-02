@@ -46,7 +46,7 @@ services:
     restart: always
     privileged: true
     ports:
-      - '8855:80'
+      - '8890:80'
     volumes:
       - ../front/nginx/conf.d:/etc/nginx/conf.d
       - ../front/manage-web/dist:/manage-web/dist
