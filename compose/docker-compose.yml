@@ -40,3 +40,18 @@ services:
       - TZ=Asia/Tokyo
     networks:
       - bri
+  manage-web:
+    image: nginx:latest
+    container_name: manage-web
+    restart: always
+    privileged: true
+    ports:
+      - '8855:80'
+    volumes:
+      - ../front/nginx/conf.d:/etc/nginx/conf.d
+      - ../front/manage-web/dist:/manage-web/dist
+    environment:
+      - LANG=C.UTF-8
+      - TZ=Asia/Tokyo
+    networks:
+      - bri
