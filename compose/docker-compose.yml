@@ -23,9 +23,10 @@ services:
     restart: always
     tty: true
     ports:
-      - '8888:8888'
+      - '8889:6800'
     volumes:
       - '/home/centos/project/spider:/spider'
+      - '../back/spider/scrapyd.conf:/etc/scrapyd/scrapyd.conf'
     environment:
       - TZ=Asia/Tokyo
     networks:
