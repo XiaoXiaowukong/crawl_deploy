@@ -64,7 +64,7 @@ services:
       - TZ=Asia/Tokyo
     restart: always
     volumes:
-      - ../back/data_manage/manage.jar:/app.jar
+      - ../back/data_manage/manager.jar:/app.jar
     ports:
       - '8891:8080'
     command: [ "java","-Djava.net.preferIPv4Stack=true","-jar","/app.jar","--spring.profiles.active=test" ]
