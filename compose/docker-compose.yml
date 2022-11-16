@@ -64,7 +64,7 @@ services:
       - TZ=Asia/Tokyo
     restart: always
     volumes:
-      - ../back/data_manage/crawl-api-0.1.0-exec.jar:/app.jar
+      - ../back/data_manage/crawl-all-0.1.0-exec.jar:/app.jar
     ports:
       - '8891:8083'
     command: [ "java","-Djava.net.preferIPv4Stack=true","-jar","/app.jar","--spring.profiles.active=db_test, core, admin" ]
