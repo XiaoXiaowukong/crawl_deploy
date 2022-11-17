@@ -14,7 +14,7 @@ services:
       - TZ=Asia/Tokyo
     volumes:
       - /home/centos/mysql_data:/var/lib/mysql
-      - /home/centos/opt/docker_deploy/mysql/my.cnf:/etc/mysql/my.cnf
+      - /home/centos/opt/crawl_deploy/mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - bri
   auction_spider:
