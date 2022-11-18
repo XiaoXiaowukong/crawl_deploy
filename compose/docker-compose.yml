@@ -41,6 +41,7 @@ services:
       - '../back/scrapyd/scrapyd.conf:/etc/scrapyd/scrapyd.conf'
     environment:
       - TZ=Asia/Tokyo
+    command: [ "scrapyd",">","./scrapyd.log","&" ]
     networks:
       - bri
   splash:
