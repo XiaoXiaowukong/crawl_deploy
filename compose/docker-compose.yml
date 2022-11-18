@@ -39,9 +39,10 @@ services:
       - '6800:6800'
     volumes:
       - '../back/scrapyd/scrapyd.conf:/etc/scrapyd/scrapyd.conf'
+      - '../back/scrapyd/scrapyd_run:/scrapyd_run'
     environment:
       - TZ=Asia/Tokyo
-    command: [ "scrapyd",">","./scrapyd.log","&" ]
+    command: [ "cd","/scrapyd_run","&&","scrapyd",">","./scrapyd.log","&" ]
     networks:
       - bri
   splash:
