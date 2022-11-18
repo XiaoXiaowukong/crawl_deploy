@@ -26,7 +26,19 @@ services:
       - '8889:6800'
     volumes:
       - '/home/centos/project/spider:/spider'
-      - '../back/spider/scrapyd.conf:/etc/scrapyd/scrapyd.conf'
+    environment:
+      - TZ=Asia/Tokyo
+    networks:
+      - bri
+  greenmethyl-scrapyd:
+    image: 'auction_spider:2.0'
+    container_name: "greenmethyl-scrapyd"
+    restart: always
+    tty: true
+    ports:
+      - '6800:6800'
+    volumes:
+      - '../back/scrapyd/scrapyd.conf:/etc/scrapyd/scrapyd.conf'
     environment:
       - TZ=Asia/Tokyo
     networks:
