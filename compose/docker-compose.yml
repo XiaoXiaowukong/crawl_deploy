@@ -42,7 +42,7 @@ services:
       - '../back/scrapyd/scrapyd_run:/scrapyd_run'
     environment:
       - TZ=Asia/Tokyo
-    command: [ "cd","/scrapyd_run","&&","scrapyd",">","./scrapyd.log","&" ]
+#    command: [ "cd","/scrapyd_run","&&","scrapyd",">","./scrapyd.log","&" ]
     networks:
       - bri
   splash:
