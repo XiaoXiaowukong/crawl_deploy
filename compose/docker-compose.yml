@@ -43,7 +43,12 @@ services:
     environment:
       - TZ=Asia/Tokyo
 #    command: [ "cd","/scrapyd_run","&&","scrapyd",">","./scrapyd.log","&" ]
-    command: scrapyd > ./scrapyd.log &
+    command:
+      - sh
+      - -c
+      - |
+        cd /scrapyd_run
+        scrapyd
     networks:
       - bri
   splash:
