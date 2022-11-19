@@ -79,6 +79,7 @@ services:
     restart: always
     volumes:
       - ../back/data_manage/crawl-all-0.1.0-exec.jar:/app.jar
+      - ../back/scrapyd/scrapyd_run/logs:/scrapyd/scrapyd_run/logs
     ports:
       - '8891:8080'
     command: [ "java","-Djava.net.preferIPv4Stack=true","-jar","/app.jar","--spring.profiles.active=db_test, core, admin_test" ]
