@@ -82,12 +82,12 @@ services:
     hostname: data_manage
     environment:
       - TZ=Asia/Tokyo
-      - MYSQL_HOST=54.250.151.61
-      - MYSQL_PORT=33066
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
       - MYSQL_DB=crawl_auction
       - MYSQL_USER=crawl
       - MYSQL_PASSWORD=methyl@2022
-      - SCRAPYD_HOST=http://54.250.151.61
+      - SCRAPYD_HOST=http://greenmethyl-scrapyd
       - SCRAPYD_PORT=6800
     restart: always
     volumes:
