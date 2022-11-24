@@ -82,12 +82,19 @@ services:
     hostname: data_manage
     environment:
       - TZ=Asia/Tokyo
+      - MYSQL_HOST=54.250.151.61
+      - MYSQL_PORT=33066
+      - MYSQL_DB=crawl_auction
+      - MYSQL_USER=crawl
+      - MYSQL_PASSWORD=methyl@2022
+      - SCRAPYD_HOST=http://54.250.151.61
+      - SCRAPYD_PORT=6800
     restart: always
     volumes:
       - ../back/data_manage/crawl-all-0.1.0-exec.jar:/app.jar
       - ../back/scrapyd/scrapyd_run/logs:/scrapyd/scrapyd_run/logs
     ports:
       - '8891:8080'
-    command: [ "java","-Djava.net.preferIPv4Stack=true","-jar","/app.jar","--spring.profiles.active=db_test, core, admin_test" ]
+    command: [ "java","-Djava.net.preferIPv4Stack=true","-jar","/app.jar","--spring.profiles.active=db_aws, core, admin_aws" ]
     networks:
       - bri
