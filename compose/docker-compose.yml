@@ -82,6 +82,7 @@ services:
     hostname: data_manage
     environment:
       - TZ=Asia/Tokyo
+      - SERVER_PORT=8080
       - MYSQL_HOST=mysql
       - MYSQL_PORT=3306
       - MYSQL_DB=crawl_auction
@@ -89,12 +90,19 @@ services:
       - MYSQL_PASSWORD=methyl@2022
       - SCRAPYD_HOST=http://greenmethyl-scrapyd
       - SCRAPYD_PORT=6800
+      - SCRAPYD_PROJECT_NAME=greenmethyl-spider
+      - SCRAPYD_MAXJOB_COUNT=5
+      - SCRAPYD_LOG_PATH=/scrapyd/scrapyd_run/logs
+      - EMAIL_SMTP_HOST=smtp.gmail.com
+      - EMAIL_SMTP_PORT=587
+      - EMAIL_SMTP_USER=jamesneo0614@gmail.com
+      - EMAIL_SMTP_PASSWORD=xgdanpuzjfdwticp
     restart: always
     volumes:
       - ../back/data_manage/crawl-all-0.1.0-exec.jar:/app.jar
       - ../back/scrapyd/scrapyd_run/logs:/scrapyd/scrapyd_run/logs
     ports:
       - '8891:8080'
-    command: [ "java","-Djava.net.preferIPv4Stack=true","-jar","/app.jar","--spring.profiles.active=db_aws, core, admin_aws" ]
+    command: [ "java","-Djava.net.preferIPv4Stack=true","-jar","/app.jar","--spring.profiles.active=aws" ]
     networks:
       - bri
