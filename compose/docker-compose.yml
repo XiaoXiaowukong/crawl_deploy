@@ -30,24 +30,41 @@ services:
       - TZ=Asia/Tokyo
     networks:
       - bri
+#  greenmethyl-scrapyd:
+#    image: 'auction_spider:2.0'
+#    container_name: "greenmethyl-scrapyd"
+#    restart: always
+#    tty: true
+#    ports:
+#      - '8889:6800'
+#    volumes:
+#      - '../back/scrapyd/scrapyd.conf:/etc/scrapyd/scrapyd.conf'
+#      - '../back/scrapyd/scrapyd_run:/scrapyd_run'
+#    environment:
+#      - TZ=Asia/Tokyo
+##    command: [ "cd","/scrapyd_run","&&","scrapyd",">","./scrapyd.log","&" ]
+#    command:
+#      - sh
+#      - -c
+#      - |
+#        cd /scrapyd_run
+#        scrapyd
+#    networks:
+#      - bri
   greenmethyl-scrapyd:
-    image: 'auction_spider:2.0'
+    image: 'scrapyd:latest'
     container_name: "greenmethyl-scrapyd"
     restart: always
     tty: true
     ports:
       - '8889:6800'
-    volumes:
-      - '../back/scrapyd/scrapyd.conf:/etc/scrapyd/scrapyd.conf'
-      - '../back/scrapyd/scrapyd_run:/scrapyd_run'
+#    volumes:
+#      - '../back/scrapyd/scrapyd.conf:/etc/scrapyd/scrapyd.conf'
+#      - '../back/scrapyd/scrapyd_run:/scrapyd_run'
     environment:
       - TZ=Asia/Tokyo
-#    command: [ "cd","/scrapyd_run","&&","scrapyd",">","./scrapyd.log","&" ]
+    #    command: [ "cd","/scrapyd_run","&&","scrapyd",">","./scrapyd.log","&" ]
     command:
-      - sh
-      - -c
-      - |
-        cd /scrapyd_run
         scrapyd
     networks:
       - bri
