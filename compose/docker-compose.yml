@@ -84,10 +84,12 @@ services:
     restart: always
     privileged: true
     ports:
-      - '8890:80'
+      - '443:443'
     volumes:
       - ../front/nginx/conf.d:/etc/nginx/conf.d
       - ../front/manage-web/dist:/manage-web/dist
+      - ../front/nginx/ssl/demo.xmengya.com.key:/etc/nginx/demo.xmengya.com.key
+      - ../front/nginx/ssl/demo.xmengya.com_bundle.crt:/etc/nginx/demo.xmengya.com_bundle.crt
     environment:
       - LANG=C.UTF-8
       - TZ=Asia/Tokyo
