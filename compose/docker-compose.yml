@@ -109,6 +109,8 @@ services:
       - MYSQL_PASSWORD=methyl@2022
       - SCRAPYD_HOST=http://greenmethyl-scrapyd
       - SCRAPYD_PORT=6800
+      - SCRAPYD_LOG_HOST=http://54.250.151.61
+      - SCRAPYD_LOG_PORT=8891
       - SCRAPYD_PROJECT_NAME=greenmethyl-spider
       - SCRAPYD_MAXJOB_COUNT=5
       - SCRAPYD_LOG_PATH=/scrapyd/scrapyd_run/logs
@@ -116,6 +118,7 @@ services:
       - EMAIL_SMTP_PORT=587
       - EMAIL_SMTP_USER=jamesneo0614@gmail.com
       - EMAIL_SMTP_PASSWORD=xgdanpuzjfdwticp
+      - THREAD_COUNT=300
     restart: always
     volumes:
       - ../back/data_manage/crawl-all-0.1.0-exec.jar:/app.jar
