@@ -58,12 +58,10 @@ services:
     tty: true
     ports:
       - '8889:6800'
-#    volumes:
-#      - '../back/scrapyd/scrapyd.conf:/etc/scrapyd/scrapyd.conf'
-#      - '../back/scrapyd/scrapyd_run:/scrapyd_run'
+    volumes:
+      - '../back/scrapyd/scrapyd_run/logs:/logs'
     environment:
       - TZ=Asia/Tokyo
-    #    command: [ "cd","/scrapyd_run","&&","scrapyd",">","./scrapyd.log","&" ]
     command:
         scrapyd
     networks:
@@ -123,7 +121,6 @@ services:
     volumes:
       - ../back/data_manage/crawl-all-0.1.0-exec.jar:/app.jar
       - ../back/scrapyd/scrapyd_run/logs:/scrapyd/scrapyd_run/logs
-      - ../back/data_manage/logs:/logs
     ports:
       - '8891:8080'
     command: [ "java","-Djava.net.preferIPv4Stack=true","-jar","/app.jar","--spring.profiles.active=db_aws, core, admin_aws" ]
