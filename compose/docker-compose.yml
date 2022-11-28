@@ -61,7 +61,7 @@ services:
     volumes:
       - ../back/scrapyd/logs:/logs
       - ../back/scrapyd/eggs:/eggs
-      - ../back/scrapyd/dbs:dbs
+      - ../back/scrapyd/dbs:/dbs
     environment:
       - TZ=Asia/Tokyo
     command:
