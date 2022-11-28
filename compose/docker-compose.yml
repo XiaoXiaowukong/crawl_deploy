@@ -60,6 +60,8 @@ services:
       - '8889:6800'
     volumes:
       - ../back/scrapyd/logs:/logs
+      - ../back/scrapyd/eggs:/eggs
+      - ../back/scrapyd/dbs:dbs
     environment:
       - TZ=Asia/Tokyo
     command:
