@@ -1,7 +1,7 @@
 {
   "cluster": "crawlcluster",
   "serviceName": "service-scrapyd-api",
-  "taskDefinition": "arn:aws:ecs:ap-northeast-3:285445125734:task-definition/scrapyd:2",
+  "taskDefinition": "arn:aws:ecs:ap-northeast-3:285445125734:task-definition/scrapyd:4",
   "loadBalancers": [
     {
       "targetGroupArn": "arn:aws:elasticloadbalancing:ap-northeast-3:285445125734:targetgroup/crawl-tg-scrapyd/d4541050748cfdde",
