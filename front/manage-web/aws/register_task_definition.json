@@ -1,0 +1,32 @@
+{
+  "family": "front_manage",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::285445125734:role/ecs_all",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "essential": true,
+      "image": "285445125734.dkr.ecr.ap-northeast-3.amazonaws.com/front_manage:latest",
+      "name": "front_manage-web",
+      "portMappings": [
+        {
+          "containerPort": 443,
+          "hostPort": 443
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": "true",
+          "awslogs-group": "awslogs-front",
+          "awslogs-region": "ap-northeast-3",
+          "awslogs-stream-prefix": "awslogs-example"
+        }
+      }
+    }
+  ]
+}

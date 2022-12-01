@@ -1,0 +1,32 @@
+{
+  "cluster": "crawlcluster",
+  "serviceName": "front_manage_web_1202",
+  "taskDefinition": "arn:aws:ecs:ap-northeast-3:285445125734:task-definition/front_manage:1",
+  "loadBalancers": [
+    {
+      "targetGroupArn": "arn:aws:elasticloadbalancing:ap-northeast-3:285445125734:targetgroup/crawl-web-tg/80118a6f7d5c8e99",
+      "containerName": "front_manage-web",
+      "containerPort": 443
+    }
+  ],
+  "desiredCount": 1,
+  "launchType": "FARGATE",
+  "platformVersion": "1.4.0",
+  "deploymentConfiguration": {
+    "maximumPercent": 200,
+    "minimumHealthyPercent": 100
+  },
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": [
+        "subnet-05290dc50febf9415"
+      ],
+      "securityGroups": [
+        "sg-0b0d5302a1b2b0036"
+      ],
+      "assignPublicIp": "ENABLED"
+    }
+  },
+  "healthCheckGracePeriodSeconds": 0,
+  "schedulingStrategy": "REPLICA"
+}
