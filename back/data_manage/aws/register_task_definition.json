@@ -1,0 +1,106 @@
+{
+  "family": "back_manage_1201",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::285445125734:role/ecs_all",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "essential": true,
+      "image": "285445125734.dkr.ecr.ap-northeast-3.amazonaws.com/back_manage:latest",
+      "name": "back_manage-api",
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 8080
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": "true",
+          "awslogs-group": "awslogs-wordpress",
+          "awslogs-region": "ap-northeast-3",
+          "awslogs-stream-prefix": "awslogs-example"
+        }
+      },
+      "environment": [
+        {
+          "name": "MYSQL_HOST",
+          "value": "54.250.151.61"
+        },
+        {
+          "name": "MYSQL_PORT",
+          "value": "33066"
+        },
+        {
+          "name": "MYSQL_DB",
+          "value": "crawl_auction"
+        },
+        {
+          "name": "MYSQL_USER",
+          "value": "crawl"
+        },
+        {
+          "name": "MYSQL_PASSWORD",
+          "value": "methyl@2022"
+        },
+        {
+          "name": "SCRAPYD_HOST",
+          "value": "http://54.250.151.61"
+        },
+        {
+          "name": "SCRAPYD_PORT",
+          "value": "8889"
+        },
+        {
+          "name": "SCRAPYD_LOG_HOST",
+          "value": "http://54.250.151.61"
+        },
+        {
+          "name": "SCRAPYD_LOG_PORT",
+          "value": "8891"
+        },
+        {
+          "name": "SCRAPYD_PROJECT_NAME",
+          "value": "greenmethyl-spider"
+        },
+        {
+          "name": "SCRAPYD_MAXJOB_COUNT",
+          "value": "5"
+        },
+        {
+          "name": "SCRAPYD_LOG_PATH",
+          "value": "/scrapyd/scrapyd_run/logs"
+        },
+        {
+          "name": "EMAIL_SMTP_HOST",
+          "value": "smtp.gmail.com"
+        },
+        {
+          "name": "EMAIL_SMTP_PORT",
+          "value": "587"
+        },
+        {
+          "name": "EMAIL_SMTP_USER",
+          "value": "jamesneo0614@gmail.com"
+        },
+        {
+          "name": "EMAIL_SMTP_PASSWORD",
+          "value": "xgdanpuzjfdwticp"
+        },
+        {
+          "name": "THREAD_COUNT",
+          "value": "300"
+        },
+        {
+          "name": "TZ",
+          "value": "Asia/Tokyo"
+        }
+      ]
+    }
+  ]
+}

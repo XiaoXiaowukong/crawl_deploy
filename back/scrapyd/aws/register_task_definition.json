@@ -59,6 +59,10 @@
         {
           "name": "AWS_BUCKET",
           "value": "XXX"
+        },
+        {
+          "name": "TZ",
+          "value": "Asia/Tokyo"
         }
       ]
     }

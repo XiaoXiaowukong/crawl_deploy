@@ -1,0 +1,32 @@
+{
+  "cluster": "crawlcluster",
+  "serviceName": "back_manage_api_1201",
+  "taskDefinition": "arn:aws:ecs:ap-northeast-3:285445125734:task-definition/back_manage_1201:1",
+  "loadBalancers": [
+    {
+      "targetGroupArn": "arn:aws:elasticloadbalancing:ap-northeast-3:285445125734:targetgroup/crawl-tg/ae8adebc610ac3b0",
+      "containerName": "back_manage-api",
+      "containerPort": 8080
+    }
+  ],
+  "desiredCount": 1,
+  "launchType": "FARGATE",
+  "platformVersion": "1.4.0",
+  "deploymentConfiguration": {
+    "maximumPercent": 200,
+    "minimumHealthyPercent": 100
+  },
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": [
+        "subnet-05290dc50febf9415"
+      ],
+      "securityGroups": [
+        "sg-0b0d5302a1b2b0036"
+      ],
+      "assignPublicIp": "ENABLED"
+    }
+  },
+  "healthCheckGracePeriodSeconds": 0,
+  "schedulingStrategy": "REPLICA"
+}
