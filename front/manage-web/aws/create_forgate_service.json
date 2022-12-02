@@ -1,7 +1,7 @@
 {
   "cluster": "crawlcluster",
   "serviceName": "front_manage_web_1202",
-  "taskDefinition": "arn:aws:ecs:ap-northeast-3:285445125734:task-definition/front_manage:1",
+  "taskDefinition": "arn:aws:ecs:ap-northeast-3:285445125734:task-definition/front_manage:4",
   "loadBalancers": [
     {
       "targetGroupArn": "arn:aws:elasticloadbalancing:ap-northeast-3:285445125734:targetgroup/crawl-web-tg/80118a6f7d5c8e99",
