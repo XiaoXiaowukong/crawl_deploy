@@ -50,19 +50,19 @@
         },
         {
           "name": "SCRAPYD_HOST",
-          "value": "http://54.250.151.61"
+          "value": "service-scrapyd-api"
         },
         {
           "name": "SCRAPYD_PORT",
-          "value": "8889"
+          "value": "6800"
         },
         {
           "name": "SCRAPYD_LOG_HOST",
-          "value": "http://54.250.151.61"
+          "value": "http://crawlalb-2117503264.ap-northeast-3.elb.amazonaws.com"
         },
         {
           "name": "SCRAPYD_LOG_PORT",
-          "value": "8891"
+          "value": "6800"
         },
         {
           "name": "SCRAPYD_PROJECT_NAME",
