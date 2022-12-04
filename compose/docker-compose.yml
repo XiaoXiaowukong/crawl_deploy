@@ -17,40 +17,6 @@ services:
       - /home/centos/opt/crawl_deploy/mysql/my.cnf:/etc/mysql/mysql.conf.d/my.cnf
     networks:
       - bri
-  auction_spider:
-    image: 'auction_spider:1.2'
-    container_name: "auction_spider"
-    restart: always
-    tty: true
-    ports:
-      - '8889:6800'
-    volumes:
-      - '/home/centos/project/spider:/spider'
-    environment:
-      - TZ=Asia/Tokyo
-    networks:
-      - bri
-#  greenmethyl-scrapyd:
-#    image: 'auction_spider:2.0'
-#    container_name: "greenmethyl-scrapyd"
-#    restart: always
-#    tty: true
-#    ports:
-#      - '8889:6800'
-#    volumes:
-#      - '../back/scrapyd/scrapyd.conf:/etc/scrapyd/scrapyd.conf'
-#      - '../back/scrapyd/scrapyd_run:/scrapyd_run'
-#    environment:
-#      - TZ=Asia/Tokyo
-##    command: [ "cd","/scrapyd_run","&&","scrapyd",">","./scrapyd.log","&" ]
-#    command:
-#      - sh
-#      - -c
-#      - |
-#        cd /scrapyd_run
-#        scrapyd
-#    networks:
-#      - bri
   greenmethyl-scrapyd:
     image: 'scrapyd:latest'
     container_name: "greenmethyl-scrapyd"
@@ -60,20 +26,7 @@ services:
       - '8889:6800'
     volumes:
       - ../back/scrapyd/logs:/logs
-      - ../back/scrapyd/eggs:/eggs
       - ../back/scrapyd/dbs:/dbs
-    environment:
-      - TZ=Asia/Tokyo
-    command:
-        scrapyd
-    networks:
-      - bri
-  splash:
-    image: scrapinghub/splash
-    container_name: "splash"
-    restart: always
-    ports:
-      - '8050:8050'
     environment:
       - TZ=Asia/Tokyo
     networks:
