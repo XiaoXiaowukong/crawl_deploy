@@ -31,6 +31,9 @@ services:
       - TZ=Asia/Tokyo
     networks:
       - bri
+    links:
+      - mysql
+      - data_manage
   manage-web:
     image: nginx:latest
     container_name: manage-web
