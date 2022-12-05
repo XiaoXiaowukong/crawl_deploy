@@ -29,6 +29,14 @@ services:
       - ../back/scrapyd/dbs:/dbs
     environment:
       - TZ=Asia/Tokyo
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
+      - MYSQL_DB=crawl_auction
+      - MYSQL_USER=crawl
+      - MYSQL_PASSWORD=methyl@2022
+      - BACK_MANAGE_HOST=data_manage
+      - BACK_MANAGE_PORT=8080
+      - S3_BUCKET=s3
     networks:
       - bri
     links:
@@ -55,11 +63,6 @@ services:
     image: openjdk:1.8
     container_name: data_manage
     hostname: data_manage
-#    deploy:
-#      resources:
-#        limits:
-#          cpus: '0.2'
-#          memory: 700M
     environment:
       - TZ=Asia/Tokyo
       - SERVER_PORT=8080
