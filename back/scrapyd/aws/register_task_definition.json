@@ -30,39 +30,39 @@
       "environment": [
         {
           "name": "MYSQL_HOST",
-          "value": "54.250.151.61"
+          "value": "xxx"
         },
         {
           "name": "MYSQL_PORT",
-          "value": "33066"
+          "value": "xxx"
         },
         {
           "name": "MYSQL_USER",
-          "value": "crawl"
+          "value": "xxx"
         },
         {
           "name": "MYSQL_POSSWORD",
-          "value": "methyl@2022"
+          "value": "xxx"
         },
         {
           "name": "MYSQL_DB",
-          "value": "crawl_auction"
+          "value": "xxx"
         },
         {
-          "name": "CALLBACK_API_HOST",
-          "value": "54.250.151.61"
+          "name": "BACK_MANAGE_HOST",
+          "value": "xxx"
         },
         {
-          "name": "CALLBACK_API_PROT",
-          "value": "8891"
+          "name": "BACK_MANAGE_PORT",
+          "value": "xxx"
         },
         {
-          "name": "AWS_BUCKET",
+          "name": "S3_BUCKET",
           "value": "XXX"
         },
         {
-          "name": "TZ",
-          "value": "Asia/Tokyo"
+          "name": "FAKE_USERAGENT_FILE",
+          "value": "/fake_useragent_0.1.11.json"
         }
       ]
     }
