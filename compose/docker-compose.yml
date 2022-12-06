@@ -76,7 +76,6 @@ services:
       - SCRAPYD_PORT=6800
       - SCRAPYD_PROJECT_NAME=greenmethyl-spider
       - SCRAPYD_MAXJOB_COUNT=5
-      - SCRAPYD_LOG_PATH=/back/scrapyd/logs
       - EMAIL_SMTP_HOST=smtp.gmail.com
       - EMAIL_SMTP_PORT=587
       - EMAIL_SMTP_USER=jamesneo0614@gmail.com
