@@ -86,7 +86,6 @@ services:
     volumes:
       - ../back/data_manage/crawl-all-0.1.0-exec.jar:/app.jar
       - ../back/data_manage/logs:/logs
-      - ../back/scrapyd/logs:/back/scrapyd/logs
     ports:
       - '8891:8080'
     command: [ "java","-Djava.net.preferIPv4Stack=true","-jar","/app.jar","--spring.profiles.active=db_aws, core, admin_aws" ]
