@@ -36,7 +36,7 @@ services:
       - MYSQL_PASSWORD=methyl@2022
       - BACK_MANAGE_HOST=data_manage
       - BACK_MANAGE_PORT=8080
-      - S3_BUCKET=
+      - S3_BUCKET=arn:aws:s3:::bucket-202212
       - FAKE_USERAGENT_FILE=/fake_useragent_0.1.11.json
     networks:
       - bri
