@@ -21,6 +21,7 @@ services:
     image: 'scrapyd:latest'
     container_name: "greenmethyl-scrapyd"
     restart: always
+    privileged: true
     tty: true
     ports:
       - '8889:6800'
