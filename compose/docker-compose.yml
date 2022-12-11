@@ -39,6 +39,8 @@ services:
       - BACK_MANAGE_PORT=8080
       - S3_BUCKET=bucket-202212
       - FAKE_USERAGENT_FILE=/fake_useragent_0.1.11.json
+      - AWS_SECRET_ACCESS_KEY=sVL2Zd+vlbsu0+EBdMFx9EmL3VwUatF5InAPbLtX
+      - AWS_ACCESS_KEY_ID=AKIAUE5O26ZTD4WG4RNN
     networks:
       - bri
     links:
