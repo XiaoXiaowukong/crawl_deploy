@@ -41,7 +41,6 @@ services:
       - FAKE_USERAGENT_FILE=/fake_useragent_0.1.11.json
       - AWS_SECRET_ACCESS_KEY=sVL2Zd+vlbsu0+EBdMFx9EmL3VwUatF5InAPbLtX
       - AWS_ACCESS_KEY_ID=AKIAUE5O26ZTD4WG4RNN
-      - CURRENCYAPI_KEY=NB3dEzUDo8sI7kdzCHOaPnrGjHX8P7JbOjFh
     networks:
       - bri
     links:
@@ -85,6 +84,7 @@ services:
       - EMAIL_SMTP_USER=jamesneo0614@gmail.com
       - EMAIL_SMTP_PASSWORD=xgdanpuzjfdwticp
       - THREAD_COUNT=300
+      - CURRENCYAPI_KEY=NB3dEzUDo8sI7kdzCHOaPnrGjHX8P7JbOjFh
     restart: always
     volumes:
       - ../back/data_manage/crawl-all-0.1.0-exec.jar:/app.jar
