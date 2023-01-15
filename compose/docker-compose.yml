@@ -41,6 +41,7 @@ services:
       - FAKE_USERAGENT_FILE=/fake_useragent_0.1.11.json
       - AWS_SECRET_ACCESS_KEY=sVL2Zd+vlbsu0+EBdMFx9EmL3VwUatF5InAPbLtX
       - AWS_ACCESS_KEY_ID=AKIAUE5O26ZTD4WG4RNN
+      - CURRENCYAPI_KEY=NB3dEzUDo8sI7kdzCHOaPnrGjHX8P7JbOjFh
     networks:
       - bri
     links:
